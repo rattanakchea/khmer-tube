@@ -7,6 +7,7 @@ var app = app || {};
 app.controller('HomeCtrl', function ($scope, YoutubeService, $sce, $location) {
 	$scope.menuItems = global.menuItems;
 
+	var query = YoutubeService.query;
 
 	$scope.queryVideo = function(query){
 		YoutubeService.queryVideo(query)
@@ -16,5 +17,10 @@ app.controller('HomeCtrl', function ($scope, YoutubeService, $sce, $location) {
 		});
 	};
 
-	$scope.queryVideo();
+	$scope.queryVideo(query);
+
+
+	$scope.setSelectedVideo = function(video){
+		YoutubeService.selectedVideo = video; //store a reference
+	}
 });

@@ -10,8 +10,8 @@
 
 <!-- Projects Row -->
 <div class="row">
-    <div class="col-md-3 portfolio-item" ng-repeat="video in videos">
-        <a href="#/browse/{{video.videoId}}">
+    <div class="col-sm-6 col-md-3 portfolio-item" ng-repeat="video in videos">
+        <a href="#/browse/{{video.videoId}}" ng-click="setSelectedVideo(video)">
             <img class="img-responsive" ng-src="{{video.img}}">
         </a>
         <div class="title">
@@ -33,15 +33,6 @@
             </li>
             <li>
                 <a href="#">2</a>
-            </li>
-            <li>
-                <a href="#">3</a>
-            </li>
-            <li>
-                <a href="#">4</a>
-            </li>
-            <li>
-                <a href="#">5</a>
             </li>
             <li>
                 <a href="#">&raquo;</a>
