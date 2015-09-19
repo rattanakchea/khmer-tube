@@ -11,7 +11,7 @@ app.controller('BrowseCtrl', function ($scope, $location, $sce, $routeParams, Yo
 		.then(function(video){
 			$scope.selectedVideo = video;
 			$scope.url = $sce.trustAsResourceUrl('http://www.youtube.com/embed/'+
-			$routeParams.videoId);
+				$routeParams.videoId);
 		}, function(err){
 			console.log(err);
 			//redirect to home
@@ -23,9 +23,24 @@ app.controller('BrowseCtrl', function ($scope, $location, $sce, $routeParams, Yo
 			YoutubeService.selectedVideo.videoId);
 	}
 
+	$scope.back = function(){
+		window.history.back();
+	}
+
 	//related video
 	//options1: take 4 random videos from root parent scope
 	//options2: youtube api similar video
-	$scope.relatedVideos = {};
+	if(!jQuery.isEmptyObject($scope.$parent.videos)){
+		var videos = $scope.$parent.videos;
+		if(videos.length != 0){
+			$scope.relatedVideos = getRandomRelatedVideos(videos, 4);	
+		}
+	}
+	
+	function getRandomRelatedVideos(arr, n){
+		arr.sort(function() { return 0.5 - Math.random() });
+		return arr.slice(0, n);	
+		
+	}
 
 });

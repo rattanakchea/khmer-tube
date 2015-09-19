@@ -39,7 +39,7 @@ app.factory('YoutubeService', function($http, API_BASEURL, API_KEY){
 			part: 'snippet',
 			q: query,
 			key: API_KEY,
-			maxResults: 8
+			maxResults: 12
 		};
 
 		//must use 'return' to return the promise

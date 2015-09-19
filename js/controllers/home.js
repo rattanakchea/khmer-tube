@@ -15,6 +15,7 @@ app.controller('HomeCtrl', function ($scope, YoutubeService, $sce, $location) {
 			//console.log(videos);
 			$scope.videos = videos;
 		});
+		$location.path('/#/');
 	};
 
 	$scope.queryVideo(query);

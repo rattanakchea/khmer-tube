@@ -12,8 +12,11 @@
 	<div class="col-md-8" >
 		<iframe id="ytplayer" type="text/html" width="100%" height="400px"
 		ng-src="{{url}}"
-		frameborder="0"/>	
+		frameborder="0"/>
+		<br>
+		<a class="btn-warning btn" ng-click="back()">Back</a>
 	</div>
+		
 </div>
 <!-- /.row -->
 
@@ -22,24 +25,10 @@
 	<div class="col-md-12" >
 		<h3 class="page-header">Related Videos</h3>
 	</div>
-	<div class="col-sm-3 col-xs-6">
-		<a href="#">
-			<img class="img-responsive portfolio-item" src="http://placehold.it/500x300" alt="">
-		</a>
-	</div>
-	<div class="col-sm-3 col-xs-6">
-		<a href="#">
-			<img class="img-responsive portfolio-item" src="http://placehold.it/500x300" alt="">
-		</a>
-	</div>
-	<div class="col-sm-3 col-xs-6">
-		<a href="#">
-			<img class="img-responsive portfolio-item" src="http://placehold.it/500x300" alt="">
-		</a>
-	</div>
-	<div class="col-sm-3 col-xs-6">
-		<a href="#">
-			<img class="img-responsive portfolio-item" src="http://placehold.it/500x300" alt="">
+	<div class="col-sm-3 col-xs-6" ng-repeat="rv in relatedVideos">
+		<a href="#/browse/{{rv.videoId}}" ng-click="setSelectedVideo(rv)">
+			<p>{{rv.title | limitTo: 25}}</p>
+			<img class="img-responsive" ng-src="{{rv.img}}">
 		</a>
 	</div>
 </div>
