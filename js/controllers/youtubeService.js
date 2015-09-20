@@ -7,7 +7,8 @@ app.factory('YoutubeService', function($http, API_BASEURL, API_KEY){
 	var path = {
 		search: 'search',
 		videos: 'videos',
-		channel: 'channels'
+		channel: 'channels',
+		playlistItems: 'playlistItems'
 	};
 
 
@@ -17,6 +18,21 @@ app.factory('YoutubeService', function($http, API_BASEURL, API_KEY){
 		$.each(data.data.items, function(index, item){		
 			var object = {
 				'videoId': item.id.videoId,
+				'img': item.snippet.thumbnails.high.url,
+				'title': item.snippet.title,
+				'description': item.snippet.description
+			};
+			returnedData.push(object);
+
+		});
+		return returnedData;
+	};
+	//private helper method
+	function parseDataChannel(data){
+		var returnedData = [];
+		$.each(data.data.items, function(index, item){		
+			var object = {
+				'videoId': item.snippet.resourceId.videoId,
 				'img': item.snippet.thumbnails.high.url,
 				'title': item.snippet.title,
 				'description': item.snippet.description
@@ -74,6 +90,23 @@ app.factory('YoutubeService', function($http, API_BASEURL, API_KEY){
 				title: data.title,
 				description: data.description
 			};
+		});		
+	};
+
+	//query by channel id
+	service.queryByChannel = function(playListId){
+		var config = {
+			part: 'snippet',
+			playlistId: playListId,
+			key: API_KEY,
+			maxResults: 12
+		};
+		return $http.get(API_BASEURL + path.playlistItems,
+		{
+			params: config,
+			cache: true
+		}).then(function(res){
+			return parseDataChannel(res);
 		});		
 	}
 

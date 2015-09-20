@@ -4,7 +4,7 @@
 
 var app = app || {};
 
-app.controller('HomeCtrl', function ($scope, YoutubeService, $sce, $location) {
+app.controller('HomeCtrl', function ($scope, YoutubeService, $location) {
 
 	$scope.menuItems = global.menuItems;
 
@@ -16,7 +16,6 @@ app.controller('HomeCtrl', function ($scope, YoutubeService, $sce, $location) {
 			//console.log(videos);
 			$scope.videos = videos;
 		});
-		$location.path('/#/');
 	};
 
 	$scope.queryVideo(query);

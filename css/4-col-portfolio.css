@@ -30,6 +30,6 @@ footer {
   top:0;
   z-index:1000;
   background:rgba(255,255,255,0.80) no-repeat center center;
-  background-image: url('/img/loading-animation.gif');
+  background-image: url('loading-animation.gif');
   background-size: 50px;
 }
