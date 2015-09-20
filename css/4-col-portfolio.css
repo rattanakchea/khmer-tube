@@ -33,3 +33,11 @@ footer {
   background-image: url('loading-animation.gif');
   background-size: 50px;
 }
+
+a.videos{
+  display:block;
+  opacity: 0.8;
+}
+a.videos:hover{
+  opacity: 1;
+}

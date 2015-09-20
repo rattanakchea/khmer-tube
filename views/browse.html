@@ -26,7 +26,7 @@
 		<h3 class="page-header">Related Videos</h3>
 	</div>
 	<div class="col-sm-3 col-xs-6" ng-repeat="rv in relatedVideos">
-		<a href="#/browse/{{rv.videoId}}" ng-click="setSelectedVideo(rv)">
+		<a class="videos" href="#/browse/{{rv.videoId}}" ng-click="setSelectedVideo(rv)">
 			<p>{{rv.title | limitTo: 25}}</p>
 			<img class="img-responsive" ng-src="{{rv.img}}">
 		</a>

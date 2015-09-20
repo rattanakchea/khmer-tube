@@ -6,33 +6,33 @@ var global = {
   'id': 'UC8b-bkP65mcy4wMFEw3eirw',
   'recentUpload' : 'UU8b-bkP65mcy4wMFEw3eirw', 
   'playlists': [
-  { 'name' : 'Live Show Week 2',
-  'playlistId': 'PLpFfrFW3a-RtxUZfC9DRCW_wV0m_AZmDX'
-  },
-  { 'name' : 'Live Show Week 1',
-  'playlistId': 'PLpFfrFW3a-RveHYUgImU68VhGIZUK_PfK'
-  },
-  { 'name' : 'Green Mile',
-  'playlistId': 'PLpFfrFW3a-Rv1NR-_a76IsxcP73FqlLp1'
-  },
-  { 'name' : 'Theater Round 2',
-  'playlistId': 'PLpFfrFW3a-RuD_eDjZBKI3mxfwSQazE-2'
-  },
-  { 'name' : 'Theater Round 1',
-  'playlistId': 'PLpFfrFW3a-Rs5FEmQYXl66qs39YeRSizL'
-  },
-  { 'name' : 'Judge Audition 4',
-  'playlistId': 'PLpFfrFW3a-Rs3jnGm-jkW5MTVvvYBkOeG'
-  },
-  { 'name' : 'Judge Audition 3',
-  'playlistId': 'PLpFfrFW3a-RtoE_SjZawG1_Z2M2C3-ZSz'
-  },
-  { 'name' : 'Judge Audition 2',
-  'playlistId': 'PLpFfrFW3a-RuPaUS2gXe4S6KcqZTU73yT'
-  },
-  { 'name' : 'Judge Audition 1',
-  'playlistId': 'PLpFfrFW3a-RteSV-eeyCv-CKHHeQ0BvaV'
-  }
+    { 'name' : 'Live Show Week 2',
+    'playlistId': 'PLpFfrFW3a-RtxUZfC9DRCW_wV0m_AZmDX'
+    },
+    { 'name' : 'Live Show Week 1',
+    'playlistId': 'PLpFfrFW3a-RveHYUgImU68VhGIZUK_PfK'
+    },
+    { 'name' : 'Green Mile',
+    'playlistId': 'PLpFfrFW3a-Rv1NR-_a76IsxcP73FqlLp1'
+    },
+    { 'name' : 'Theater Round 2',
+    'playlistId': 'PLpFfrFW3a-RuD_eDjZBKI3mxfwSQazE-2'
+    },
+    { 'name' : 'Theater Round 1',
+    'playlistId': 'PLpFfrFW3a-Rs5FEmQYXl66qs39YeRSizL'
+    },
+    { 'name' : 'Judge Audition 4',
+    'playlistId': 'PLpFfrFW3a-Rs3jnGm-jkW5MTVvvYBkOeG'
+    },
+    { 'name' : 'Judge Audition 3',
+    'playlistId': 'PLpFfrFW3a-RtoE_SjZawG1_Z2M2C3-ZSz'
+    },
+    { 'name' : 'Judge Audition 2',
+    'playlistId': 'PLpFfrFW3a-RuPaUS2gXe4S6KcqZTU73yT'
+    },
+    { 'name' : 'Judge Audition 1',
+    'playlistId': 'PLpFfrFW3a-RteSV-eeyCv-CKHHeQ0BvaV'
+    }
   ]
   },
   {'name': 'The Voice Cambodia',

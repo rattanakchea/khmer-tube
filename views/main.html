@@ -1,9 +1,9 @@
 <!-- Page Heading -->
 <div class="row">
     <div class="col-lg-12">
-        <h1 class="page-header">Welcome to KhmerTube
-            <small>Best collection of Khmer Videos</small>
-        </h1>
+        <ul class="breadcrumb">
+            <li ng-repeat="b in breadcrumbs">{{b}}</li>
+      </ul>
     </div>
 </div>
 <!-- /.row -->
@@ -11,11 +11,11 @@
 <!-- Projects Row -->
 <div class="row">
     <div class="col-sm-6 col-md-3 portfolio-item" ng-repeat="video in videos">
-        <a href="#/browse/{{video.videoId}}" ng-click="setSelectedVideo(video)">
+        <a class="videos" href="#/browse/{{video.videoId}}" ng-click="setSelectedVideo(video)">
             <img class="img-responsive" ng-src="{{video.img}}">
         </a>
         <div class="title">
-            <p>{{video.title | limitTo:25}}</p>
+            <p>{{video.title | limitTo:30}}</p>
         </div>
     </div>
 </div>

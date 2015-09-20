@@ -7,7 +7,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a ng-click="queryVideo()" class="navbar-brand" href="#/">KhmerTube</a>
+            <a ng-click="init()" class="navbar-brand" href="#/">KhmerTube</a>
         </div>
 
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -15,8 +15,8 @@
             <li class="dropdown" ng-repeat="menuItem in menuItems">
               <a href="" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">{{menuItem.name}} <span class="caret"></span></a>
               <ul class="dropdown-menu" role="menu">
-                <li><a href="#/channel/{{menuItem.recentUpload}}">Latest Video</a></li>
-                <li ng-repeat="playlist in menuItem.playlists"><a href="#/channel/{{playlist.playlistId}}">{{playlist.name}}</a></li>
+                <li><a href="#/channel/{{menuItem.recentUpload}}" ng-click="setSelectedPlaylist(menuItem)">Latest Video</a></li>
+                <li ng-repeat="playlist in menuItem.playlists"><a href="#/channel/{{playlist.playlistId}}" ng-click="setSelectedPlaylist(menuItem, playlist)">{{playlist.name}}</a></li>
             </ul>
         </li>
     </ul>

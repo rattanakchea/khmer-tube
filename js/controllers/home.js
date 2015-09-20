@@ -6,6 +6,11 @@ var app = app || {};
 
 app.controller('HomeCtrl', function ($scope, YoutubeService, $location) {
 
+	$scope.init = function(){
+		$scope.breadcrumbs = ['Welcome to KhmerTube'];
+		$scope.queryVideo(query);	
+	}
+	
 	$scope.menuItems = global.menuItems;
 
 	var query = YoutubeService.query;
@@ -18,9 +23,19 @@ app.controller('HomeCtrl', function ($scope, YoutubeService, $location) {
 		});
 	};
 
-	$scope.queryVideo(query);
+	$scope.init();
 
 	$scope.setSelectedVideo = function(video){
 		YoutubeService.selectedVideo = video; //store a reference
+	}
+
+	$scope.setSelectedPlaylist = function(menuItem, playlist){
+		if(menuItem){ //true, not undefined, or null
+			$scope.breadcrumbs.length = 0;
+			$scope.breadcrumbs.push(menuItem.name);	
+		}
+		if (playlist){
+			$scope.breadcrumbs.push(playlist.name);
+		}
 	}
 });
