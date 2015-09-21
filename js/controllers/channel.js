@@ -10,6 +10,7 @@ app.controller('ChannelCtrl', function ($scope, $routeParams, YoutubeService, $s
 		.then(function(videos){
 			//console.log(videos);
 			$scope.$parent.videos = videos;
+			$scope.$parent.page = 1; //reset load more
 		});
 	};
 

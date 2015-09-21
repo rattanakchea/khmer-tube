@@ -10,7 +10,7 @@
 
 <!-- Projects Row -->
 <div class="row">
-    <div class="col-sm-6 col-md-3 portfolio-item" ng-repeat="video in videos">
+    <div class="col-sm-6 col-md-3 portfolio-item" ng-repeat="video in videos | limitTo: itemLimits()">
         <a class="videos" href="#/browse/{{video.videoId}}" ng-click="setSelectedVideo(video)">
             <img class="img-responsive" ng-src="{{video.img}}">
         </a>
@@ -22,22 +22,7 @@
 <!-- /.row -->
 
 <!-- Pagination -->
-<div class="row text-center">
-    <div class="col-lg-12">
-        <ul class="pagination">
-            <li>
-                <a href="#">&laquo;</a>
-            </li>
-            <li class="active">
-                <a href="#">1</a>
-            </li>
-            <li>
-                <a href="#">2</a>
-            </li>
-            <li>
-                <a href="#">&raquo;</a>
-            </li>
-        </ul>
-    </div>
+<div ng-show="hasMoreItems()" class="row text-center">
+   <a ng-click="loadMoreItems()" class="btn btn-primary">Load more</a>
 </div>
 <!-- /.row -->

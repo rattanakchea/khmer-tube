@@ -29,6 +29,7 @@ app.factory('YoutubeService', function($http, API_BASEURL, API_KEY){
 	};
 	//private helper method
 	function parseDataChannel(data){
+		console.log(data);
 		var returnedData = [];
 		$.each(data.data.items, function(index, item){		
 			var object = {
@@ -55,7 +56,7 @@ app.factory('YoutubeService', function($http, API_BASEURL, API_KEY){
 			part: 'snippet',
 			q: query,
 			key: API_KEY,
-			maxResults: 12
+			maxResults: 24
 		};
 
 		//must use 'return' to return the promise
@@ -99,7 +100,7 @@ app.factory('YoutubeService', function($http, API_BASEURL, API_KEY){
 			part: 'snippet',
 			playlistId: playListId,
 			key: API_KEY,
-			maxResults: 12
+			maxResults: 30
 		};
 		return $http.get(API_BASEURL + path.playlistItems,
 		{
