@@ -3,9 +3,10 @@
 This is a migration from my v1.khmertube app into using [bootstrap theme] (http://getbootstrap.com/).
 
 ## What's next
-* work on logo (bootstrap color)
+* work on logo (bootstrap color) --> DONE v1.0
 * make search box always visible
-* use load more btn (when videos exceeds 20) instead of pagination
+* work on footer
+* use load more btn (when videos exceeds 20) instead of pagination -> DONE
 
 ## Features
 

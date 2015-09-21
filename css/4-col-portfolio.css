@@ -41,3 +41,16 @@ a.videos{
 a.videos:hover{
   opacity: 1;
 }
+
+a#logo{
+  font-weight: 700;
+  letter-spacing: .2rem;
+}
+
+
+a#logo span{
+  border-top: 2px solid red;
+  border-right: 2px solid red;
+  border-bottom: 2px solid red;
+  border-radius: 0 5px 5px 0;
+}
