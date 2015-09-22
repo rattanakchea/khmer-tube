@@ -45,7 +45,7 @@ a.videos:hover{
 
 a#logo{
   font-weight: 700;
-  letter-spacing: .2rem;
+  letter-spacing: .1rem;
 }
 
 
@@ -65,4 +65,11 @@ a#logo span{
   display: -webkit-flex;
   display: -ms-flexbox;
   display:         flex;
+}
+
+footer {
+  padding-top: 1rem;
+  text-align: center;
+  background: #ececec;
+  margin: 1rem 0 0 0; 
 }
