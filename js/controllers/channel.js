@@ -5,8 +5,8 @@ var app = app || {};
 app.controller('ChannelCtrl', function ($scope, $routeParams, YoutubeService, $sce) {
 
 
-	$scope.queryByChannel = function(playlistId){
-		YoutubeService.queryByChannel(playlistId)
+	$scope.queryByPlaylistId = function(playlistId){
+		YoutubeService.queryByPlaylistId(playlistId)
 		.then(function(videos){
 			//console.log(videos);
 			$scope.$parent.videos = videos;
@@ -14,8 +14,28 @@ app.controller('ChannelCtrl', function ($scope, $routeParams, YoutubeService, $s
 		});
 	};
 
-	if($routeParams.channelId) {
-		$scope.queryByChannel($routeParams.channelId);
+
+	$scope.queryByChannelId = function(playlistId){
+		YoutubeService.queryByChannelId(playlistId)
+		.then(function(videos){
+			//console.log(videos);
+			$scope.$parent.videos = videos;
+			$scope.$parent.page = 1; //reset load more
+		});
+	};
+
+	if($routeParams.type) {
+		switch($routeParams.type){
+			case 'channelId':
+				console.log($routeParams.id);
+				$scope.queryByChannelId($routeParams.id);
+				break;
+			case 'playlistId':
+				$scope.queryByPlaylistId($routeParams.id);
+				break;
+			default:
+				console.log('no type identified');
+		}	
 	}
 
 	//not used, because maybe too slow

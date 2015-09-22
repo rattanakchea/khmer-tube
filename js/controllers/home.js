@@ -12,7 +12,7 @@ app.controller('HomeCtrl', function ($scope, YoutubeService, $location) {
 		$scope.page = 1;
 	}
 	
-	$scope.menuItems = global.menuItems;
+	$scope.menuItems = data.menuItems;
 
 	var query = YoutubeService.query;
 

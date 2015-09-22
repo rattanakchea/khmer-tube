@@ -50,13 +50,33 @@ app.factory('YoutubeService', function($http, API_BASEURL, API_KEY){
 	service.videos = [];
 	service.selectedVideo = {};
 
+	service.queryByChannelId = function(channelId){
+		var config = {
+			part: 'snippet',
+			channelId: channelId,
+			key: API_KEY,
+			maxResults: 24
+		};
+
+		//must use 'return' to return the promise
+		return $http.get(API_BASEURL + path.search,
+		{
+			params: config,
+			cache: true
+		}).then(function(res){
+			//parse response
+			//console.log(res);
+			return parseData(res);
+		});
+	};
+
 	service.queryVideo = function(query){
 		query = query || service.query;
 		var config = {
 			part: 'snippet',
 			q: query,
 			key: API_KEY,
-			maxResults: 24
+			maxResults: 20
 		};
 
 		//must use 'return' to return the promise
@@ -95,7 +115,7 @@ app.factory('YoutubeService', function($http, API_BASEURL, API_KEY){
 	};
 
 	//query by channel id
-	service.queryByChannel = function(playListId){
+	service.queryByPlaylistId = function(playListId){
 		var config = {
 			part: 'snippet',
 			playlistId: playListId,

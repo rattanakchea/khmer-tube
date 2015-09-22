@@ -38,6 +38,7 @@ a.videos{
   display:block;
   opacity: 0.8;
 }
+
 a.videos:hover{
   opacity: 1;
 }
@@ -53,4 +54,15 @@ a#logo span{
   border-right: 2px solid red;
   border-bottom: 2px solid red;
   border-radius: 0 5px 5px 0;
+}
+
+/*
+ * Row with equal height columns
+ * --------------------------------------------------
+ */
+.row-eq-height {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display:         flex;
 }
